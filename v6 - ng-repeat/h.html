@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<title>Test</title>
+		<script type="text/javascript" src = "/ng/Scripts/angular.js"></script>
+		<script type="text/javascript" src = "module.js"></script>
+	</head>
+
+	<body ng-app="myModule">		
+		<div ng-controller="myController">
+			<table>
+				<thead>
+					<tr>
+						<td>firstName</td>
+						<td>lastName</td>
+						<td>Gender</td>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="employee in employees">
+						<td>
+							{{ employee.firstName }}
+						</td>
+						<td>
+							{{ employee.lastName }}
+						</td>
+						<td>
+							{{ employee.gender }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<br/>
+			<br/>
+
+			<ul>
+				<li ng-repeat="country in countries">
+					{{ country.name + " " + $index}}
+
+					<ul>
+						<li ng-repeat="city in country.cities">
+							{{ city.name + " " + $parent.$index + "->" + $index}}
+						</li>
+					</ul>	
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Test</title>
+		<script type="text/javascript" src = "/ng/Scripts/angular.js"></script>
+		<script type="text/javascript" src = "module.js"></script>
+	</head>
+
+	<body ng-app="myModule">		
+		<div ng-controller="myController">
+			<table border = "1px" padding="5px">
+				<thead border = "1px" padding="5px">
+					<th>Name</th>
+					<th>Likes</th>
+					<th>Dislikes</th>
+					<th>Like/Dislike</th>
+				</thead>
+
+				<tbody border = "1px" padding="5px">
+					<tr ng-repeat="technology in technologies">
+						<td>{{ technology.name }}</td>
+						<td>{{ technology.likes }}</td>
+						<td>{{ technology.dislikes }}</td>
+						<td>
+							<input type="button" value="Like" ng-click="incrementLikes(technology)">
+
+							<input type="button" value="Dislike" ng-click="decrementLikes(technology)">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
